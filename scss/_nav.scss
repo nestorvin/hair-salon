@@ -1,0 +1,28 @@
+.navbar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    /* height: 100px; */
+}
+.nav-link {
+    color: white !important;
+}
+
+.nav-item:active {
+    color: red !important;
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse {
+        background: snow;
+
+    }
+
+    .navbar-collapse li a {
+
+        border-top: 1px solid;
+        color: rgb(128, 123, 123) !important;
+
+    }
+}

@@ -8,7 +8,7 @@
   <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <title>Hair salon</title>
   <?php wp_head(); ?>
 </head>
@@ -23,36 +23,36 @@
 
   <div id="carouselExampleFade" class="carousel slide carousel-fade position-relative" data-ride="carousel">
 
-      <nav class="navbar navbar-expand-md navbar-dark" role="navigation">
-        <div class="container">
-          <!-- ------------------------------ -->
-          <!-- Logo -->
-          <a class="navbar-brand" href="#">Logo</a>
-          <!-- ------------------------------ -->
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'your-theme-slug'); ?>">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <nav class="navbar navbar-expand-md navbar-dark" role="navigation">
+      <div class="container">
+        <!-- ------------------------------ -->
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">Logo</a>
+        <!-- ------------------------------ -->
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'your-theme-slug'); ?>">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
 
 
 
-          <?php
-          wp_nav_menu(array(
-            'theme_location'    => 'primary',
-            'depth'             => 2,
-            'container'         => 'div',
-            'container_class'   => 'collapse navbar-collapse justify-content-end ',
-            'container_id'      => 'bs-example-navbar-collapse-1',
-            'menu_class'        => 'nav navbar-nav',
-            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-            'walker'            => new WP_Bootstrap_Navwalker(),
-          ));
-          ?>
+        <?php
+        wp_nav_menu(array(
+          'theme_location'    => 'primary',
+          'depth'             => 2,
+          'container'         => 'div',
+          'container_class'   => 'collapse navbar-collapse justify-content-end ',
+          'container_id'      => 'bs-example-navbar-collapse-1',
+          'menu_class'        => 'nav navbar-nav',
+          'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+          'walker'            => new WP_Bootstrap_Navwalker(),
+        ));
+        ?>
 
 
-        </div>
-      </nav>
+      </div>
+    </nav>
 
 
 
