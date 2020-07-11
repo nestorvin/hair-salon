@@ -16,71 +16,88 @@
 <body>
 
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">Navbar</a>
-        <?php
-        wp_nav_menu( array(
+
+
+
+
+
+  <div id="carouselExampleFade" class="carousel slide carousel-fade position-relative" data-ride="carousel">
+
+      <nav class="navbar navbar-expand-md navbar-dark" role="navigation">
+        <div class="container">
+          <!-- ------------------------------ -->
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">Logo</a>
+          <!-- ------------------------------ -->
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'your-theme-slug'); ?>">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+
+
+
+          <?php
+          wp_nav_menu(array(
             'theme_location'    => 'primary',
             'depth'             => 2,
             'container'         => 'div',
-            'container_class'   => 'collapse navbar-collapse',
+            'container_class'   => 'collapse navbar-collapse justify-content-end ',
             'container_id'      => 'bs-example-navbar-collapse-1',
             'menu_class'        => 'nav navbar-nav',
             'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
             'walker'            => new WP_Bootstrap_Navwalker(),
-        ) );
-        ?>
-    </div>
-</nav>
+          ));
+          ?>
 
 
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-          <div class="carousel-inner">
+        </div>
+      </nav>
 
 
-            <?php
 
-            $args = array(
-              'post_type' => 'page',
-              'post__in' => array(49, 139)
-            );
-            $query = new WP_Query($args);
 
-            if ($query->have_posts()) :
-              $display_active = 0;
-              while ($query->have_posts()) : $query->the_post(); ?>
+    <div class="carousel-inner">
 
-                <div class="carousel-item <?php if ($display_active == 0) echo 'active' ?>" data-interval="4000">
 
-                  <!-- <img src="http://localhost/wordpress/wp-content/uploads/2018/06/beautiful-bouquet-bridal-247295.jpg" class="d-block w-100" style="height:70vh" alt="..."> -->
-                  <?php the_post_thumbnail(array('class' => 'slider')); ?>
+      <?php
 
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Nulla vitae elit libero, um.wwwww</p>
-                  </div>
+      $args = array(
+        'post_type' => 'page',
+        'post__in' => array(49, 139)
+      );
+      $query = new WP_Query($args);
 
-                </div>
+      if ($query->have_posts()) :
+        $display_active = 0;
+        while ($query->have_posts()) : $query->the_post(); ?>
 
-            <?php
-                $display_active++;
-              endwhile;
+          <div class="carousel-item <?php if ($display_active == 0) echo 'active' ?>" data-interval="4000">
 
-            endif;
-            ?>
+            <!-- <img src="http://localhost/wordpress/wp-content/uploads/2018/06/beautiful-bouquet-bridal-247295.jpg" class="d-block w-100" style="height:70vh" alt="..."> -->
+            <?php the_post_thumbnail(array('class' => 'slider')); ?>
+
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Nulla vitae elit libero, um.wwwww</p>
+            </div>
 
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
+
+      <?php
+          $display_active++;
+        endwhile;
+
+      endif;
+      ?>
+
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
