@@ -63,7 +63,7 @@
 
       $args = array(
         'post_type' => 'page',
-        'post__in' => array(49, 139)
+        'post__in' => array(264, 139)
       );
       $query = new WP_Query($args);
 
@@ -77,8 +77,16 @@
             <?php the_post_thumbnail(array('class' => 'slider')); ?>
 
             <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Nulla vitae elit libero, um.wwwww</p>
+              <!-- <h5>Third slide label</h5> -->
+              <?php the_title($before = '<h5 class = slider-title>', $after = '</h5>');
+
+              ?>
+              <p class="slider-text">  
+                <?php
+                echo wp_trim_words(get_the_content(), 10);
+                ?>
+              </p>
+
             </div>
 
           </div>

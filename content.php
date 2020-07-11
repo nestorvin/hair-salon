@@ -18,16 +18,18 @@
 
         <div class="card-deck card-item col-12 col-md-4 text-center mx-auto">
 
-            <?php if (has_post_thumbnail()) : ?>
-            <?php the_post_thumbnail(array('class' => 'card-img mx-auto'));
-            endif;
+          <?php if (has_post_thumbnail()) : ?>
+          <?php the_post_thumbnail(array('class' => 'card-img mx-auto'));
+          endif;
+          ?>
+          <div class="card-body">
+            <?php the_title($before = '<h5 class = card-title>', $after = '</h5>');
             ?>
-            <div class="card-body">
-              <?php the_title($before = '<h5 class = card-title>', $after = '</h5>');
-              echo wp_trim_words(get_the_content(), 20);
+            <p class="card-text">
+              <?php echo wp_trim_words(get_the_content(), 20);
               ?>
-              <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-            </div>
+            </p>
+          </div>
 
         </div>
 
@@ -42,6 +44,3 @@
 
   </div>
 </div>
-
-<div class="vh-100"></div>
-<div class="xexe">XXX</div>
