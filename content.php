@@ -19,11 +19,9 @@
         <div class="card-deck card-item col-12 col-md-4 text-center mx-auto">
 
             <?php if (has_post_thumbnail()) : ?>
-              <div class="img-container mx-auto">
             <?php the_post_thumbnail(array('class' => 'card-img mx-auto'));
             endif;
             ?>
-            </div>
             <div class="card-body">
               <?php the_title($before = '<h5 class = card-title>', $after = '</h5>');
               echo wp_trim_words(get_the_content(), 20);
