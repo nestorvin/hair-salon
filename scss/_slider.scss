@@ -1,19 +1,22 @@
-img.attachment-slider {
-    height: 70vh;
-    width: 100vw;
+div.carousel-item.slider {
+    height: 75vh;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    
 }
 
-.slider-title{
+.slider-title {
     text-align: left;
     color: white;
     font-size: 2rem;
     font-weight: 900;
 }
-.slider-text{
+
+.slider-text {
     color: white;
     text-align: left;
     margin-bottom: 100px;
-    // margin: 0 auto 60px auto;
     font-size: 1.1rem;
     width: 50%;
 }

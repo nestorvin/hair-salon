@@ -13,98 +13,88 @@
 </head>
 
 <body>
+  <header>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade position-relative" data-ride="carousel">
 
+      <nav class="navbar navbar-expand-md navbar-dark" role="navigation">
+        <div class="container">
+          <!-- ------------------------------ -->
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">Logo</a>
+          <!-- ------------------------------ -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'your-theme-slug'); ?>">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
+          <?php
+          wp_nav_menu(array(
+            'theme_location'    => 'primary',
+            'depth'             => 2,
+            'container'         => 'div',
+            'container_class'   => 'collapse navbar-collapse justify-content-end ',
+            'container_id'      => 'bs-example-navbar-collapse-1',
+            'menu_class'        => 'nav navbar-nav',
+            'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+            'walker'            => new WP_Bootstrap_Navwalker(),
+          ));
+          ?>
 
+          <button class="appointment ">Umów się</button>
+        </div>
+      </nav>
 
-
-
-
-  <div id="carouselExampleFade" class="carousel slide carousel-fade position-relative" data-ride="carousel">
-
-    <nav class="navbar navbar-expand-md navbar-dark" role="navigation">
-      <div class="container">
-        <!-- ------------------------------ -->
-        <!-- Logo -->
-        <a class="navbar-brand" href="#">Logo</a>
-        <!-- ------------------------------ -->
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'your-theme-slug'); ?>">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-
-
+      <div class="carousel-inner">
 
         <?php
-        wp_nav_menu(array(
-          'theme_location'    => 'primary',
-          'depth'             => 2,
-          'container'         => 'div',
-          'container_class'   => 'collapse navbar-collapse justify-content-end ',
-          'container_id'      => 'bs-example-navbar-collapse-1',
-          'menu_class'        => 'nav navbar-nav',
-          'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-          'walker'            => new WP_Bootstrap_Navwalker(),
-        ));
-        ?>
 
-        <button class="appointment ">Umów się</button>
-      </div>
-    </nav>
+        $args = array(
+          'post_type' => 'page',
+          'post__in' => array(264, 139)
+        );
+        $query = new WP_Query($args);
 
+        if ($query->have_posts()) :
+          $display_active = 0;
+          while ($query->have_posts()) : $query->the_post(); ?>
 
+            <?php if (has_post_thumbnail()) :
+              $urlImg = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()));
 
+            endif; ?>
 
-    <div class="carousel-inner">
+            <div class="carousel-item slider <?php if ($display_active == 0) echo 'active' ?>" style="background-image:url(<?php echo $urlImg ?>)" data-interval="4000">
 
+              <div class="carousel-caption d-none d-md-block">
+                <?php the_title($before = '<h5 class = slider-title>', $after = '</h5>');
 
-      <?php
-
-      $args = array(
-        'post_type' => 'page',
-        'post__in' => array(264, 139)
-      );
-      $query = new WP_Query($args);
-
-      if ($query->have_posts()) :
-        $display_active = 0;
-        while ($query->have_posts()) : $query->the_post(); ?>
-
-          <div class="carousel-item <?php if ($display_active == 0) echo 'active' ?>" data-interval="4000">
-
-            <!-- <img src="http://localhost/wordpress/wp-content/uploads/2018/06/beautiful-bouquet-bridal-247295.jpg" class="d-block w-100" style="height:70vh" alt="..."> -->
-            <?php the_post_thumbnail(array('class' => 'slider')); ?>
-
-            <div class="carousel-caption d-none d-md-block">
-              <!-- <h5>Third slide label</h5> -->
-              <?php the_title($before = '<h5 class = slider-title>', $after = '</h5>');
-
-              ?>
-              <p class="slider-text">  
-                <?php
-                echo wp_trim_words(get_the_content(), 10);
                 ?>
-              </p>
+                <p class="slider-text">
+                  <?php
+                  echo wp_trim_words(get_the_content(), 10);
+                  ?>
+                </p>
+
+              </div>
 
             </div>
 
-          </div>
+        <?php
+            $display_active++;
+          endwhile;
 
-      <?php
-          $display_active++;
-        endwhile;
+        endif;
+        wp_reset_postdata();
+        ?>
 
-      endif;
-      ?>
-
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+
+  </header>
