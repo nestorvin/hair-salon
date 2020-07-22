@@ -3,7 +3,7 @@
     <h1 class="text-center my-5">Nasze usługi</h1>
 
     <div class="container mt-4">
-        <div class="row">
+        <div class="row mb-5">
 
             <?php
 
@@ -21,14 +21,16 @@
                     <div class="card-deck card-item col-12 col-md-4 text-center mx-auto">
 
                         <a class="card-anchor" target="blank" href="<?php echo esc_url(get_permalink()); ?>"></a>
+                        <div class="img-card-container mx-auto">
 
-                        <?php
+                            <?php
 
-                        if (has_post_thumbnail()) :
-                            the_post_thumbnail(array('class' => 'card-img mx-auto'));
-                        endif;
-                        ?>
+                            if (has_post_thumbnail()) :
+                                the_post_thumbnail(array('class' => 'card-img '));
+                            endif;
+                            ?>
 
+                        </div>
 
                         <div class="card-body">
 

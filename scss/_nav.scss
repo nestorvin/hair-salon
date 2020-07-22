@@ -2,7 +2,8 @@
     position: absolute;
     left: 0;
     right: 0;
-    z-index: 2;
+    top: 0;
+    z-index: 4;
 }
 .nav-link {
     color: white !important;
@@ -30,6 +31,10 @@ li.active a{
 }
 .navbar-toggler{
     background-color: rgb(150, 105, 136);
+}
+.custom-logo-link img{
+    height: 80px;
+    width: 300px;
 }
 @media (max-width: 767px) {
     .navbar-collapse {

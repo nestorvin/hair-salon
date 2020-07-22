@@ -64,12 +64,32 @@ add_action( 'widgets_init', 'wpdocs_theme_slug_widgets_init' );
 /**
  * Register Custom Navigation Walker
  */
+
 function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
 
+/**
+ * Adding Custom Logo support
+ */
+add_theme_support( 'custom-logo' );
+
+// function themename_custom_logo_setup() {
+//     $defaults = array(
+//     'height'      => 100,
+//     'width'       => 50,
+//     'flex-height' => true,
+//     'flex-width'  => true,
+//     'header-text' => array( 'site-title', 'site-description' ),
+//     );
+//     add_theme_support( 'custom-logo', $defaults );
+//    }
+//    add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
 ?>
+
+
 
 
 

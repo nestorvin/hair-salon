@@ -20,7 +20,13 @@
         <div class="container">
           <!-- ------------------------------ -->
           <!-- Logo -->
-          <a class="navbar-brand" href="#">Logo</a>
+          <a class="navbar-brand" href="#">
+            <?php
+            if (function_exists('the_custom_logo')) :
+              the_custom_logo();
+            endif;
+            ?>
+          </a>
           <!-- ------------------------------ -->
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'your-theme-slug'); ?>">
             <span class="navbar-toggler-icon"></span>
@@ -38,8 +44,8 @@
             'walker'            => new WP_Bootstrap_Navwalker(),
           ));
           ?>
-
-          <button class="appointment ">Umów się</button>
+          <!-- Popup with appoinment call numbers -->
+          <?php get_sidebar(); ?>
         </div>
       </nav>
 
@@ -64,7 +70,7 @@
 
             <div class="carousel-item slider <?php if ($display_active == 0) echo 'active' ?>" style="background-image:url(<?php echo $urlImg ?>)" data-interval="4000">
 
-              <div class="carousel-caption d-none d-md-block">
+              <div class="carousel-caption d-none d-md-flex flex-column align-items-start mb-5">
                 <?php the_title($before = '<h5 class = slider-title>', $after = '</h5>');
 
                 ?>
@@ -73,6 +79,7 @@
                   echo wp_trim_words(get_the_content(), 10);
                   ?>
                 </p>
+                <a class="slider-btn" target="blank" href="<?php echo esc_url(get_permalink()); ?>">Zobacz więcej</a>
 
               </div>
 
