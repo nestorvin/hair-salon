@@ -3,7 +3,6 @@
 # -------------------------------------------
 function my_script_enqueue()
 {
-
     wp_enqueue_style('my-style', get_template_directory_uri() . '/css/index.min.css', array(), '1.0', 'all');    
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array ( 'jquery' ), 1.1, true);
 }

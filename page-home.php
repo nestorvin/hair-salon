@@ -8,8 +8,8 @@
             <?php
 
             $args = array(
-                'post_type' => 'post',
-                'post__in' => array(211, 137, 213)
+                'category_name' => 'Hair',
+                'posts_per_page' => 6,
             );
 
             $query = new WP_Query($args);
@@ -57,4 +57,8 @@
         </div>
     </div>
 </article>
+<div class="contact">
+<?php dynamic_sidebar('sidebar-2') ?>
+
+</div>
 <?php get_footer(); ?>

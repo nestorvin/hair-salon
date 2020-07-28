@@ -1,5 +1,7 @@
-<?php get_header(); ?>
+
+
 <div class="container">
+
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 

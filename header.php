@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
   <meta charset="UTF-8">
@@ -13,6 +13,8 @@
 </head>
 
 <body>
+<?php get_sidebar(); ?>
+
   <header>
     <div id="carouselExampleFade" class="carousel slide carousel-fade position-relative" data-ride="carousel">
 
@@ -44,8 +46,8 @@
             'walker'            => new WP_Bootstrap_Navwalker(),
           ));
           ?>
-          <!-- Popup with appoinment call numbers -->
-          <?php get_sidebar(); ?>
+          <button class="appointment-btn">Umów się</button>
+
         </div>
       </nav>
 
@@ -55,7 +57,7 @@
 
         $args = array(
           'post_type' => 'page',
-          'post__in' => array(264, 139)
+          'post__in' => array(238, 139)
         );
         $query = new WP_Query($args);
 
@@ -68,7 +70,7 @@
 
             endif; ?>
 
-            <div class="carousel-item slider <?php if ($display_active == 0) echo 'active' ?>" style="background-image:url(<?php echo $urlImg ?>)" data-interval="4000">
+            <div class="carousel-item slider <?php if ($display_active == 0) echo 'active' ?>" style="background-image:url(<?php echo $urlImg ?>)" data-interval="6000">
 
               <div class="carousel-caption d-none d-md-flex flex-column align-items-start mb-5">
                 <?php the_title($before = '<h5 class = slider-title>', $after = '</h5>');

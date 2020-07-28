@@ -1,14 +1,15 @@
 div.carousel-item.slider {
-    height: 75vh;
+    height: 80vh;
     width: 100%;
-    background-position: center center;
     background-size: cover;
+    background-position: center center;
+    position: relative;
 
-    
+
 }
 
+
 .slider-title {
-    // text-align: left;
     color: white;
     font-size: 2rem;
     font-weight: 900;
@@ -21,7 +22,8 @@ div.carousel-item.slider {
     width: 50%;
 
 }
-.slider-btn{
+
+.slider-btn {
     border-style: none;
     background: #ec5598;
     color: white;
@@ -30,7 +32,62 @@ div.carousel-item.slider {
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
 }
-// .carousel-control-prev-icon{
-//     width: 100px;
-//     height: 100px;
-// }
+
+@media (min-width: 767px) and (max-width:900px) and (orientation:landscape) {
+    .slider-text {
+        display: none;
+    }
+
+    .slider-title {
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 766px) and (orientation:portrait) {
+
+    div.carousel-item.slider {
+        height: 65vh;
+
+        &:after {
+            content: '';
+            position: absolute;
+            // z-index: 100;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.603);
+        }
+    }
+
+    div.carousel-item.slider:nth-child(1) {
+        background-size: 250%;
+        background-position: 30% center;
+
+    }
+
+    div.carousel-item.slider:nth-child(2) {
+        background-size: 300%;
+        background-position: 75% center;
+
+    }
+
+}
+
+@media (max-width: 766px) and (orientation:landscape) {
+    div.carousel-item.slider {
+        height: 65vh;
+
+        &:after {
+            content: '';
+            position: absolute;
+            // z-index: 100;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.603);
+        }
+    }
+}

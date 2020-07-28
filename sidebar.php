@@ -1,4 +1,11 @@
-<div class="sidebar 1" id="widget-area">
-    <?php dynamic_sidebar('sidebar-1') ?> 
+<div class="appointment-widget" id="widget-area">
+    
+    
+<div class="contact-info">
+
+        <?php dynamic_sidebar('sidebar-1') ?>
+
 </div>
-<button class="appointment">Umów się</button>
+    <div class="cancel">X</div>
+</div>
+

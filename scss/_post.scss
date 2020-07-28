@@ -22,16 +22,22 @@ h1.post-h1 {
     letter-spacing: 2px;
     font-size: 2em;
     font-family: 'Open Sans', sans-serif;
+    color: white;
 }
 
 
 
 @media (max-width: 767px) {
-    
+
     header.post-header {
         height: 50vh;
         width: 100vw;
 
+    }
+
+    h1.post-h1 {
+        font-size: 1.3rem;
+        color: rgb(224, 216, 216);
     }
 
 }

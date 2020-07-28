@@ -1,0 +1,56 @@
+.appointment-btn {
+    border-style: none;
+    background: #ec5598;
+    color: white;
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+
+}
+
+.appointment-widget {
+
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.72, 0.07, 0.07, 1);
+    position: fixed;
+    z-index: 10;
+    height: 100vh;
+    width: 100vw;
+    background: #ec5598;
+    clip-path: circle(0px at 80% 5%);
+
+    .contact-info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 40px;
+        color: white;
+        transform: translate(-50%, -50%);
+        p{
+            color: white;
+        }
+    }
+
+    .cancel {
+        position: absolute;
+        right: 17%;
+        top: 5%;
+        font-size: 34px;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+.appointment-widget.open {
+    background: rgba($color: #000000, $alpha: 0.8);
+    clip-path: circle(120vw at 90% -10%);
+}
+@media (max-width: 990px){
+    .appointment-btn{
+        font-size: 16px;
+        padding: 5px 13px;
+        // display: none;
+    }
+}

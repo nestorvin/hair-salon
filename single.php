@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
     <meta charset="UTF-8">
@@ -13,8 +13,9 @@
 </head>
 
 <body>
+    
     <?php
-
+    get_sidebar();
 
     if (have_posts()) :
 
@@ -23,20 +24,19 @@
 
             <header class="post-header mx-auto mb-5 d-flex justify-content-center align-items-center" style="background-image: url(<?php header_image(); ?>);">
 
-
-
-
-
-
-
                 <!-- ------------------- -->
 
                 <nav class="navbar navbar-expand-md navbar-dark" role="navigation">
                     <div class="container">
                         <!-- ------------------------------ -->
                         <!-- Logo -->
-                        <a class="navbar-brand" href="#">Logo</a>
-                        <!-- ------------------------------ -->
+                        <a class="navbar-brand" href="#">
+                            <?php
+                            if (function_exists('the_custom_logo')) :
+                                the_custom_logo();
+                            endif;
+                            ?>
+                        </a> <!-- ------------------------------ -->
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'your-theme-slug'); ?>">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -54,13 +54,11 @@
                         ));
                         ?>
 
-                        <button class="appointment ">Umów się</button>
+                        <button class="appointment-btn ">Umów się</button>
                     </div>
                 </nav>
 
                 <!-- ------------------- -->
-
-
 
 
                 <?php the_title($before = '<h1 class="post-h1">', $after = '</h1>'); ?>
