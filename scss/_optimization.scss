@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    // background-color: #F5EFE0;
     background-color: rgb(254, 254, 254);
 }
 
@@ -24,10 +23,9 @@ p {
 a {
     color: whitesmoke;
 
-}
-
-a:hover {
-    text-decoration: none;
-    color: whitesmoke;
+    &:hover {
+        text-decoration: none;
+        color: whitesmoke;
+    }
 
 }

@@ -6,14 +6,13 @@ const my_tab = document.querySelector('#my-tab');
 const expand = () => {
     appointment_widget.classList.toggle("open");
     document.body.style.overflow = "hidden";
-    appointment_btn.style.opacity = '0';
+    appointment_btn.style.visibility = "hidden";
 }
 const exit = () => {
 
-    console.log('works')
     appointment_widget.classList.toggle("open");
     document.body.style.overflow = "auto";
-    appointment_btn.style.opacity = '1';
+    appointment_btn.style.visibility = 'visible';
 
 }
 

@@ -24,19 +24,17 @@
 
             <header class="post-header mx-auto mb-5 d-flex justify-content-center align-items-center" style="background-image: url(<?php header_image(); ?>);">
 
-                <!-- ------------------- -->
 
                 <nav class="navbar navbar-expand-md navbar-dark" role="navigation">
                     <div class="container">
-                        <!-- ------------------------------ -->
-                        <!-- Logo -->
+                       
                         <a class="navbar-brand" href="#">
                             <?php
                             if (function_exists('the_custom_logo')) :
                                 the_custom_logo();
                             endif;
                             ?>
-                        </a> <!-- ------------------------------ -->
+                        </a> 
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'your-theme-slug'); ?>">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -58,9 +56,6 @@
                     </div>
                 </nav>
 
-                <!-- ------------------- -->
-
-
                 <?php the_title($before = '<h1 class="post-h1">', $after = '</h1>'); ?>
 
             </header>
@@ -76,12 +71,9 @@
             </div>
     <?php
 
-
         endwhile;
 
     endif;
-
-
 
     ?>
     <?php get_footer(); ?>

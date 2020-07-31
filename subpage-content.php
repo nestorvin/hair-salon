@@ -9,7 +9,7 @@
 
     <div class="row">
 
-        <div class="col-xs-12 mx-auto">
+        <div class="col-12 mx-auto">
           <?php the_content(); ?>
         </div>
 

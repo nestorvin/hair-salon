@@ -44,7 +44,7 @@ div.carousel-item.slider {
     }
 }
 
-@media (max-width: 766px) and (orientation:portrait) {
+@media (max-width: 766px) {
 
     div.carousel-item.slider {
         height: 65vh;
@@ -52,42 +52,22 @@ div.carousel-item.slider {
         &:after {
             content: '';
             position: absolute;
-            // z-index: 100;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.603);
+            background: rgba(0, 0, 0, 0.534);
+        }
+        &:nth-child(1) {
+            background-size: 250%;
+            background-position: 30% center;
+    
+        }
+        &:nth-child(2) {
+            background-size: 300%;
+            background-position: 75% center;
+    
         }
     }
 
-    div.carousel-item.slider:nth-child(1) {
-        background-size: 250%;
-        background-position: 30% center;
-
-    }
-
-    div.carousel-item.slider:nth-child(2) {
-        background-size: 300%;
-        background-position: 75% center;
-
-    }
-
-}
-
-@media (max-width: 766px) and (orientation:landscape) {
-    div.carousel-item.slider {
-        height: 65vh;
-
-        &:after {
-            content: '';
-            position: absolute;
-            // z-index: 100;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.603);
-        }
-    }
 }

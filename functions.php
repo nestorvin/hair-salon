@@ -11,6 +11,8 @@ add_action('wp_enqueue_scripts', 'my_script_enqueue');
 
 add_theme_support('custom-header');
 
+# Add Menu Support
+# -------------------------------------------
 
 function awesome_theme_setup() {
 	
@@ -18,20 +20,18 @@ function awesome_theme_setup() {
 	
 	register_nav_menu('primary', 'Primary Header Navigation');
 	register_nav_menu('secondary', 'Footer Navigation');
-	
 }
 
 add_action('init', 'awesome_theme_setup');
 
-
+# Add Header Image Support and Post Images
+# -------------------------------------------
 add_theme_support('custom-header');
 add_theme_support( 'post-thumbnails' );
-add_theme_support('post-formats',array('aside','image','video'));
 
 
-
- 
-
+# Add Widget Support
+# -------------------------------------------
 function wpdocs_theme_slug_widgets_init() {
     register_sidebar( 
         array(
@@ -44,18 +44,6 @@ function wpdocs_theme_slug_widgets_init() {
         'after_title'   => '</h2>',
     ) 
 );
-    register_sidebar( 
-        array(
-        'name'          => 'Sidebar2',
-        'id'            => 'sidebar-2',
-        'description'   => 'Widgets in this area will be shown on all posts and pages.', 'textdomain',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h2 class="widget-h1-title">',
-        'after_title'   => '</h2>',
-    ) 
-);
-
 }
 add_action( 'widgets_init', 'wpdocs_theme_slug_widgets_init' );
 
@@ -74,17 +62,7 @@ add_action( 'after_setup_theme', 'register_navwalker' );
  */
 add_theme_support( 'custom-logo' );
 
-// function themename_custom_logo_setup() {
-//     $defaults = array(
-//     'height'      => 100,
-//     'width'       => 50,
-//     'flex-height' => true,
-//     'flex-width'  => true,
-//     'header-text' => array( 'site-title', 'site-description' ),
-//     );
-//     add_theme_support( 'custom-logo', $defaults );
-//    }
-//    add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
 
 ?>
 

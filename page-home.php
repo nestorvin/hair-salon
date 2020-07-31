@@ -44,9 +44,7 @@
 
                     </div>
 
-
             <?php
-
 
                 endwhile;
 
