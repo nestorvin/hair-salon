@@ -20,24 +20,30 @@
     color: #ec5598 !important;
 }
 
-li.active a {
-    color: #ec5598 !important;
+li.active {
+    a {
+        color: #ec5598 !important;
+    }
 }
 
 .navbar-toggler {
     background-color: rgb(150, 105, 136);
 }
 
-.custom-logo-link img {
-    height: 56px;
-    width: 270px;
+.custom-logo-link {
+    img {
+        height: 56px;
+        width: 270px;
+    }
 }
 
 @media (max-width: 990px) {
 
-    .custom-logo-link img {
-        height: 50px;
-        width: 250px;
+    .custom-logo-link {
+        img {
+            height: 50px;
+            width: 250px;
+        }
     }
 }
 
@@ -45,21 +51,26 @@ li.active a {
     .navbar-collapse {
         background: snow;
 
+        li {
+            a {
+                border-top: 1px solid;
+                color: rgb(128, 123, 123) !important;
+
+            }
+        }
+
     }
 
     .appointment-btn {
         display: none;
     }
 
-    .navbar-collapse li a {
-        border-top: 1px solid;
-        color: rgb(128, 123, 123) !important;
 
-    }
-
-    .custom-logo-link img {
-        height: 70px;
-        width: 215px;
+    .custom-logo-link {
+        img {
+            height: 70px;
+            width: 215px;
+        }
     }
 }
 
