@@ -2,4 +2,4 @@
 
 ## Website for Hair Salon made with Wordpress integration  
 
-##The trial hosted on free server and domain https://fryzjerkondzio.pl
+##The trial hosted on https://fryzjerkondzio.pl
